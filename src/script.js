@@ -1,6 +1,6 @@
 "use strict";
-let randomNumber = Math.floor(Math.random() * 11);
 const randomDamage = () => {
+  let randomNumber = Math.floor(Math.random() * 10);
   console.log(randomNumber);
 };
-randomDamage(randomNumber);
+randomDamage();
