@@ -4,7 +4,7 @@ const randomDamage = () => {
   return randomNumber;
 };
 const chooseOption = (opt1, opt2) => {
-  var randNum = Math.floor(Math.random() * 2);
+  var randNum = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
   var optionSelected = randNum === 0 ? opt1 : opt2;
   return optionSelected;
 };
@@ -15,9 +15,7 @@ function attackPlayer(health) {
 const logHealth = (player, health) => {
   console.log(`${player} health: ${health}`);
 };
-const logDeath = (winner, loser) => {
-  console.log(`${winner} defeated ${loser}`);
-};
+const logDeath = (winner, loser) => console.log(`${winner} defeated ${loser}`);
 const isDead = (health) => {
   if (health <= 0) {
     return true;
@@ -39,10 +37,10 @@ function fight(player1, player2, player1Health, player2Health) {
       player1Health = attackPlayer(player1Health);
       logHealth(player1, player1Health);
       if (isDead(player1Health)) {
-        console.log(logDeath(player2, player1));
+        logDeath(player2, player1);
         break;
       }
     }
   }
 }
-fight("A", "B", 100, 10);
+fight("Sudha", "Chandu", 100, 100);
