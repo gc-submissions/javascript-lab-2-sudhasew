@@ -25,12 +25,24 @@ const isDead = (health) => {
     return false;
   }
 };
-function fight(Sudha, Chandu, sudhaHealth, chanduHealth) {
-  console.log(`${Sudha} health: 13`);
-  console.log(`${Chandu} health: 15`);
-  var attacker = chooseOption(Sudha, Chandu);
-  if (attacker === Sudha) {
-    chanduHealth = Sudha;
+function fight(player1, player2, player1Health, player2Health) {
+  while (true) {
+    var attacker = chooseOption(player1, player2);
+    if (attacker === player1) {
+      player2Health = attackPlayer(player2Health);
+      logHealth(player2, player2Health);
+      if (isDead(player2Health)) {
+        console.log(logDeath(player1, player2));
+        break;
+      }
+    } else {
+      player1Health = attackPlayer(player1Health);
+      logHealth(player1, player1Health);
+      if (isDead(player1Health)) {
+        console.log(logDeath(player2, player1));
+        break;
+      }
+    }
   }
-  console.log(Chandu, chanduHealth);
 }
+fight("A", "B", 100, 10);
