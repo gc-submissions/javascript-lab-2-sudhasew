@@ -18,3 +18,19 @@ const logHealth = (player, health) => {
 const logDeath = (winner, loser) => {
   console.log(`${winner} defeated ${loser}`);
 };
+const isDead = (health) => {
+  if (health <= 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+function fight(Sudha, Chandu, sudhaHealth, chanduHealth) {
+  console.log(`${Sudha} health: 13`);
+  console.log(`${Chandu} health: 15`);
+  var attacker = chooseOption(Sudha, Chandu);
+  if (attacker === Sudha) {
+    chanduHealth = Sudha;
+  }
+  console.log(Chandu, chanduHealth);
+}
