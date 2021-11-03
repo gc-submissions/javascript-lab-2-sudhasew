@@ -1,10 +1,14 @@
 "use strict";
 const randomDamage = () => {
-  let randomNumber = Math.floor(Math.random() * 10);
-  console.log(randomNumber);
+  let randomNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+  return randomNumber;
 };
-randomDamage();
-
-const chooseOption = (opt1, opt2) => (randNum === 1 ? "opt1" : "opt2");
-var randNum = 0;
-console.log(chooseOption(1, 0));
+var chooseOption = (opt1, opt2) => {
+  var randNum = Math.floor(Math.random() * 2);
+  var optionSelected = randNum === 0 ? opt1 : opt2;
+  return optionSelected;
+};
+function attackPlayer(health) {
+  var result = health - randomDamage();
+  return result;
+}
