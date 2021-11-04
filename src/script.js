@@ -30,7 +30,7 @@ function fight(player1, player2, player1Health, player2Health) {
       player2Health = attackPlayer(player2Health);
       logHealth(player2, player2Health);
       if (isDead(player2Health)) {
-        console.log(logDeath(player1, player2));
+        logDeath(player1, player2);
         break;
       }
     } else {
