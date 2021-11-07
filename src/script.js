@@ -1,6 +1,11 @@
 "use strict";
-const randomDamage = () => Math.floor(Math.random() * 10 + 1);
-console.log(randomDamage());
+// const randomDamage = () => Math.floor(Math.random() * 10 + 1);
+// console.log(randomDamage()); OR DOWN ONE ALSO CORRECT
+
+const randomDamage = () => {
+  let randonNum = Math.floor(Math.random() * 10 + 1);
+  return randonNum;
+};
 
 const chooseOption = (opt1, opt2) => {
   const randNum = Math.round(Math.random());
