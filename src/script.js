@@ -45,3 +45,22 @@ function fight(player1, player2, player1Health, player2Health) {
 }
 
 fight("Sudha", "Chandu", 100, 100);
+
+function getGrade(num) {
+  if (num > 90) {
+    return "A";
+  } else if (num > 80 && num <= 90) {
+    return "B";
+  } else if (num > 70 && num <= 80) {
+    return "C";
+  } else if (num > 60 && num <= 70) {
+    return "D";
+  } else if (num < 60) {
+    return "F";
+  }
+}
+console.log(getGrade(55)); // Returns A
+//console.log(getGrade(83)); Returns B
+//console.log(getGrade(74)); Returns C
+//console.log(getGrade(65)); Returns D
+//console.log(getGrade(55)); Returns F
