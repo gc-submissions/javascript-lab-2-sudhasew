@@ -59,8 +59,33 @@ function getGrade(num) {
     return "F";
   }
 }
-console.log(getGrade(55)); // Returns A
-//console.log(getGrade(83)); Returns B
-//console.log(getGrade(74)); Returns C
-//console.log(getGrade(65)); Returns D
-//console.log(getGrade(55)); Returns F
+
+const prioritize = (urgent, important) => {
+  if (urgent && important) {
+    return 1;
+  } else if (important && !urgent) {
+    return 2;
+  } else if (urgent && !important) {
+    return 3;
+  } else if (!urgent && !important) {
+    return 4;
+  }
+};
+
+const calculatePay = (wage, hours) => {
+  if (hours === 40) {
+    let weeklyPay = wage * hours;
+    return weeklyPay;
+  } else if (hours > 40) {
+    var extraHours = hours - 40;
+    var extraWages = extraHours * wage * 1.5;
+    var total = 40 * wage + extraWages;
+    return total;
+  }
+};
+
+console.log(getGrade(95));
+
+console.log(prioritize(false, false));
+
+console.log(calculatePay(10, 45));
