@@ -72,6 +72,8 @@ const prioritize = (urgent, important) => {
   }
 };
 
+//EXTENDED CHALLENGES
+
 const calculatePay = (wage, hours) => {
   if (hours === 40) {
     let weeklyPay = wage * hours;
